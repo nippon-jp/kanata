@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO100パネル | 株式会社カナタ</title>
+    <style>
+        /* 基本リセット & 共通設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            border-bottom: 3px solid #0056b3;
+            padding: 20px 0;
+        }
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        /* メインビジュアル */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* コンテンツセクション */
+        section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        section:nth-of-type(even) {
+            background-color: #f2f6fa;
+        }
+        h2 {
+            font-size: 26px;
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #28a745;
+        }
+        h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            border-left: 5px solid #28a745;
+            padding-left: 10px;
+        }
+
+        /* 特徴セクション（3列レイアウト） */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .feature-item {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #0056b3;
+        }
+        .feature-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .feature-item li {
+            margin-bottom: 8px;
+        }
+
+        /* 画像配置用ダミーボックス */
+        .image-placeholder {
+            background-color: #e9ecef;
+            border: 2px dashed #dee2e6;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 20px 0;
+            color: #6c757d;
+            border-radius: 6px;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* テーブル（比較表） */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .highlight {
+            background-color: #eaf5ea;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* ZEHセクション */
+        .zeh-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .zeh-goals {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-left: 5px solid #0056b3;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .zeh-goals ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .company-info p {
+            margin-bottom: 5px;
+        }
+        .copyright {
+            opacity: 0.7;
+        }
+
+        /* スマホ用レスポンシブ調整 */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-logo">株式会社カナタ</div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>ECO100パネル（エコ100パネル）</h1>
+            <p>優れた断熱性と気密性で、一年中快適な次世代の省エネ住宅を実現</p>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2>ECO100パネルとは</h2>
+            <p style="max-width: 800px; margin: 0 auto text-align: center;">
+                ECO100パネルは、厳選された高性能断熱材を一体化した、住まい全体を包み込む高性能断熱複合パネルです。壁・床・屋根に採用することで、魔法瓶のような高い気密・断熱空間を作り出し、環境にもお財布にも優しい住環境を提供します。
+            </p>
+            <div class="image-placeholder">
+                【ここにECO100パネルの構造図・断面図などの画像を配置】
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>ECO100パネルの3大特徴</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>1. 圧倒的な断熱・気密性</h3>
+                    <p>外気の影響を最小限に抑え、室内の冷暖房効率を劇的に向上させます。</p>
+                    <ul>
+                        <li><strong>夏は涼しく、冬は暖かい</strong>快適空間</li>
+                        <li>隙間のない魔法瓶構造で熱を逃がさない</li>
+                    </ul>
+                </div>
+                <div class="feature-item">
+                    <h3>2. 優れた耐震性と耐久性</h3>
+                    <p>パネルを柱や梁と一体化させ、地震や台風の力を「面」で受け止めるモノコック構造を形成します。</p>
+                    <ul>
+                        <li>従来の「点」で支える工法に比べ高い堅牢性</li>
+                        <li>万が一の災害時にも歪みや破壊に強い</li>
+                    </ul>
+                </div>
+                <div class="feature-item">
+                    <h3>3. 省エネ・ZEHへの対応</h3>
+                    <p>高い基本性能が、消費電力を大幅に削減するための確かな基盤となります。</p>
+                    <ul>
+                        <li>太陽光発電などとの組み合わせに最適</li>
+                        <li>ネット・ゼロ・エネルギー・ハウス基準を容易にクリア</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison">
+        <div class="container">
+            <h2>性能・仕様比較</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>ECO100パネル仕様</th>
+                            <th>一般的な在来工法（グラスウール等）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>断熱性能</strong></td>
+                            <td class="highlight">極めて高い（熱伝導率を抑えた高性能素材）</td>
+                            <td>標準的（施工者による隙間が生じやすい）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>気密性能（C値）</strong></td>
+                            <td class="highlight">業界トップクラスの隙間のなさ</td>
+                            <td>経年劣化や施工により隙間が出やすい</td>
+                        </tr>
+                        <tr>
+                            <td><strong>耐震性</strong></td>
+                            <td class="highlight">面構造（モノコック）で高い耐震性を発揮</td>
+                            <td>柱と筋交い（点・線）による支持</td>
+                        </tr>
+                        <tr>
+                            <td><strong>冷暖房効率</strong></td>
+                            <td class="highlight">非常に高い（光熱費を大幅に削減）</td>
+                            <td>標準的（上下の温度差が生じやすい）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="zeh">
+        <div class="container">
+            <h2>ZEH（ネット・ゼロ・エネルギー・ハウス）への取り組み</h2>
+            <div class="zeh-box">
+                <p>株式会社カナタでは、ECO100パネルを標準採用した高性能な家づくりを通じて、地球温暖化防止と持続可能な社会の実現に貢献する「ZEH（ゼッチ）」の普及に強く取り組んでいます。</p>
+                
+                <div class="zeh-goals">
+                    <h4>■ ZEH普及目標と実績</h4>
+                    <p>私たちは、新築注文住宅におけるZEH（Neary ZEHを含む）の受託割合について、以下の通り普及目標を掲げ、その実現に向けて邁進しております。</p>
+                    <ul>
+                        <li><strong>今後の普及目標：</strong>2025年度・2026年度以降のZEH受託率 <strong>50%以上</strong>の維持および拡大</li>
+                        <li><strong>具体的なアプローチ：</strong>
+                            <ol style="margin-left: 20px; margin-top: 5px;">
+                                <li>ECO100パネルの標準化による建物本体の「断熱・省エネ化」</li>
+                                <li>高効率な空調・換気・照明・給湯設備の導入</li>
+                                <li>創エネ（太陽光発電システム等）の最適なシミュレーションとご提案</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+                <div class="image-placeholder">
+                    【ここにZEH関連のロゴマークや目標グラフなどの画像を配置】
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-info">
+                    <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">株式会社カナタ</p>
+                    <p>〒002-8054 北海道札幌市北区篠路町拓北３１番地４１０</p>
+                </div>
+                <div class="copyright">
+                    &copy; 2026 KANATA Co., Ltd. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
